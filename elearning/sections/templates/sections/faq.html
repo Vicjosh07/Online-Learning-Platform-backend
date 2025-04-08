@@ -1,0 +1,484 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- META ============================================= -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="UniFlare: Igniting Bright Minds in the University" />
+
+    <!-- OG -->
+    <meta property="og:title" content="UniFlare: Igniting Bright Minds in the University" />
+    <meta property="og:description" content="UniFlare: Igniting Bright Minds in the University" />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- FAVICONS ICON ============================================= -->
+    <link rel="icon" href="{% static 'assets/images/uniflare icon.png' %}" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/uniflare icon.png' %}" />
+
+    <!-- PAGE TITLE  ============================================= -->
+    <title>UniFlare: Igniting Bright Minds in the University </title>
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lt IE 9]>
+    <script src="{% static 'assets/js/html5shiv.min.js' %}"></script>
+    <script src="{% static 'assets/js/respond.min.js' %}"></script>
+    <![endif]-->
+
+    <!-- All PLUGINS CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/assets.css' %}">
+
+    <!-- TYPOGRAPHY ============================================= -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/typography.css' %}">
+
+    <!-- SHORTCODES ============================================= -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/shortcodes/shortcodes.css' %}">
+
+    <!-- STYLESHEETS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <link class="skin" rel="stylesheet" type="text/css" href="{% static 'assets/css/color/color-1.css' %}">
+
+    <!-- REVOLUTION SLIDER CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/revolution/css/layers.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/revolution/css/settings.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/revolution/css/navigation.css' %}">
+    <!-- REVOLUTION SLIDER END -->
+</head>
+
+<body id="bg">
+<div class="page-wraper">
+    <div id="loading-icon-bx"></div>
+    <!-- Header Top ==== -->
+    <header class="header rs-nav header-transparent">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="topbar-left">
+                        <ul>
+                            <li><a href="/faq/"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
+                            <li><a href="javascript:;"><i class="fa fa-envelope-o"></i>uniflaretech@gmail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="topbar-right">
+                        <ul>
+                            <li>
+                                <select class="header-lang-bx">
+                                    <option data-icon="flag flag-uk">English UK</option>
+                                    <option data-icon="flag flag-us">English US</option>
+                                </select>
+                            </li>
+                            <li><a href="/accounts/register/">Register</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="/accounts/logout/">Logout</a></li>
+                            {% else %}
+                            <li><a href="/accounts/login/">Login</a></li>
+                            {% endif %}</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sticky-header navbar-expand-lg">
+            <div class="menu-bar clearfix">
+                <div class="container clearfix">
+                    <!-- Header Logo ==== -->
+                    <div class="menu-logo">
+                        <a href="/"><img src="{% static 'assets/images/uniflare logo.png' %}" alt=""></a>
+                    </div>
+                    <!-- Mobile Nav Button ==== -->
+                    <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <!-- Author Nav ==== -->
+                    <div class="secondary-menu">
+                        <div class="secondary-inner">
+                            <ul>
+                                <li><a href="javascript:;" class="btn-link"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
+                                <!-- Search Button ==== -->
+                                <li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Search Box ==== -->
+                    <div class="nav-search-bar">
+                        <form action="#">
+                            <input name="search" value="" type="text" class="form-control" placeholder="Type to search">
+                            <span><i class="ti-search"></i></span>
+                        </form>
+                        <span id="search-remove"><i class="ti-close"></i></span>
+                    </div>
+                    <!-- Navigation Menu ==== -->
+                    <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
+                        <div class="menu-logo">
+                            <a href="/"><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Home </a></li>
+                            <li><a href="/about/">About </a></li>
+                            <li><a href="/faq/">FAQ's </a></li>
+                            <li><a href="/contact/">Contact Us</a></li>
+                            <li><a href="/blog/">Blog </a></li>
+                        </ul>
+                        <div class="nav-social-link">
+                            <a href="javascript:;"><i class="fa fa-facebook"></i></a>
+                            <a href="javascript:;"><i class="fa fa-google-plus"></i></a>
+                            <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <!-- Navigation Menu END ==== -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Top END ==== -->
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="page-banner ovbl-dark" style="background-image:url({% static 'assets/images/banner/banner3.jpg' %});">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white">Frequently Asked Questions</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb row -->
+        <div class="breadcrumb-row">
+            <div class="container">
+                <ul class="list-inline">
+                    <li><a href="/">Home</a></li>
+                    <li>Faqs 2</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb row END -->
+        <!-- contact area -->
+        <div class="content-block">
+            <!-- Your Faq -->
+            <!-- About Us -->
+            <div class="section-area section-sp1 bg-gray">
+                <div class="container">
+                     <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6 m-b30">
+                            <div class="feature-container">
+                                <div class="feature-md text-white m-b20">
+                                    <a href="#" class="icon-cell"><img src="{% static 'assets/images/icon/icon1.png' %}" alt=""/></a>
+                                </div>
+                                <div class="icon-content">
+                                    <h5 class="ttr-tilte">Our Philosophy</h5>
+                                    <p>We believe in accessible, high-quality education that empowers students to achieve their goals and build a better future.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 m-b30">
+                            <div class="feature-container">
+                                <div class="feature-md text-white m-b20">
+                                    <a href="#" class="icon-cell"><img src="{% static 'assets/images/icon/icon2.png' %}" alt=""/></a>
+                                </div>
+                                <div class="icon-content">
+                                    <h5 class="ttr-tilte">Our Principle</h5>
+                                    <p>We are committed to excellence, innovation, and inclusivity in education, ensuring every learner has the tools to succeed.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 m-b30">
+                            <div class="feature-container">
+                                <div class="feature-md text-white m-b20">
+                                    <a href="#" class="icon-cell"><img src="{% static 'assets/images/icon/icon3.png' %}" alt=""/></a>
+                                </div>
+                                <div class="icon-content">
+                                    <h5 class="ttr-tilte">Key Of Success</h5>
+                                    <p>Continuous learning, dedication, and the right resources are the foundation for achieving success in any field.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 m-b30">
+                            <div class="feature-container">
+                                <div class="feature-md text-white m-b20">
+                                    <a href="#" class="icon-cell"><img src="{% static 'assets/images/icon/icon4.png' %}" alt=""/></a>
+                                </div>
+                                <div class="icon-content">
+                                    <h5 class="ttr-tilte">Our Mission</h5>
+                                    <p>Empowering learners through quality education, innovation, and a passion for lifelong learning.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Our Services -->
+            <div class="section-area section-sp1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12">
+                            <div class="heading-bx left">
+                                <h2 class="m-b10 title-head">Frequently <span>Asked Questions</span></h2>
+                            </div>
+                            <p class="m-b10">Have questions? We’ve got answers! Explore our FAQs to learn more about our courses, enrollment process, and learning experience.</p>
+                            <p>Whether you’re curious about course materials, certifications, or support, our FAQ section is here to help you find the information you need.</p>
+
+                            <div class="ttr-accordion m-b30 faq-bx" id="accordion1">
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq1" class="collapsed" data-parent="#faq1">
+                                            Why won't my payment go through? </a> </h6>
+                                    </div>
+                                    <div id="faq1" class="acod-body collapse">
+                                        <div class="acod-content">Web design aorem apsum dolor sit amet, adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse" href="#faq2" class="collapsed" data-parent="#faq2">
+                                            How do I get a refund?</a> </h6>
+                                    </div>
+                                    <div id="faq2" class="acod-body collapse">
+                                        <div class="acod-content">Graphic design aorem apsum dolor sit amet, adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse"  href="#faq3" class="collapsed"  data-parent="#faq3">
+                                            How do I redeem a coupon? </a> </h6>
+                                    </div>
+                                    <div id="faq3" class="acod-body collapse">
+                                        <div class="acod-content">Developement aorem apsum dolor sit amet, adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse"  href="#faq4" class="collapsed"  data-parent="#faq4">
+                                            Why aren't my courses showing in my account? </a> </h6>
+                                    </div>
+                                    <div id="faq4" class="acod-body collapse">
+                                        <div class="acod-content">Developement aorem apsum dolor sit amet, adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="acod-head">
+                                        <h6 class="acod-title">
+                                            <a data-toggle="collapse"  href="#faq5" class="collapsed"  data-parent="#faq5">
+                                            Changing account name </a> </h6>
+                                    </div>
+                                    <div id="faq5" class="acod-body collapse">
+                                        <div class="acod-content">Developement aorem apsum dolor sit amet, adipiscing elit, sed diam nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="m-b10">Our platform is designed to provide high-quality, flexible learning opportunities for students worldwide. We offer a wide range of courses tailored to help you gain valuable skills and knowledge.</p>
+                            <p>With expert instructors, interactive content, and a supportive learning community, we ensure a seamless and engaging educational experience to help you achieve your goals.</p>
+
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="bg-primary text-white contact-info-bx">
+                                <h2 class="m-b10 title-head">Contact <span>Information</span></h2>
+                                <p>Have questions or need assistance? Get in touch with us for support, inquiries, or collaboration opportunities.</p>
+
+                                <div class="widget widget_getintuch">
+                                    <ul>
+                                        <li><i class="ti-location-pin"></i>Department of Computer Science, University of Abuja, FCT Abuja</li>
+                                        <li><i class="ti-mobile"></i>+2349154854700(24/7 Support)</li>
+                                        <li><i class="ti-email"></i>uniflaretech@gmail.com</li>
+                                    </ul>
+                                </div>
+                                <h5 class="m-t0 m-b20">Follow Us</h5>
+                                <ul class="list-inline contact-social-bx">
+                                    <li><a href="#" class="btn outline radius-xl"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#" class="btn outline radius-xl"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#" class="btn outline radius-xl"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Your Faq End -->
+            <!-- Company Stats -->
+            <div class="section-area content-inner section-sp1 bg-gray">
+                <div class="container">
+                    <div class="section-content">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+                                <div class="counter-style-1">
+                                    <div class="text-primary">
+                                        <span class="counter">30</span><span>+</span>
+                                    </div>
+                                    <span class="counter-text">Completed Projects</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+                                <div class="counter-style-1">
+                                    <div class="text-black">
+                                        <span class="counter">25</span><span>+</span>
+                                    </div>
+                                    <span class="counter-text">Happy Clients</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+                                <div class="counter-style-1">
+                                    <div class="text-primary">
+                                        <span class="counter">15</span><span>+</span>
+                                    </div>
+                                    <span class="counter-text">Questions Answered</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+                                <div class="counter-style-1">
+                                    <div class="text-black">
+                                        <span class="counter">100</span><span>+</span>
+                                    </div>
+                                    <span class="counter-text">Ordered Courses</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Company Stats END -->
+        </div>
+        <!-- contact area END -->
+    </div>
+    <!-- Content END-->
+    <!-- Footer ==== -->
+    <footer>
+        <div class="footer-top">
+            <div class="pt-exebar">
+                <div class="container">
+                    <div class="d-flex align-items-stretch">
+                        <div class="pt-logo mr-auto">
+                            <a href="/"><img src="{% static 'assets/images/uniflare logo sz.png' %}" alt=""/></a>
+                        </div>
+                        <div class="pt-social-link">
+                            <ul class="list-inline m-a0">
+                                <li><a href="#" class="btn-link"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" class="btn-link"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pt-btn-join">
+                            <a href="/accounts/register/" class="btn">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
+                        <div class="widget">
+                            <h5 class="footer-title">Sign Up For A Newsletter</h5>
+                            <p class="text-capitalize m-b20">Stay updated with weekly breaking news analysis and expert insights in education.</p>
+                            <div class="subscribe-form m-b20">
+                                <form class="subscription-form" action=" " method="post">
+                                    <div class="ajax-message"></div>
+                                    <div class="input-group">
+                                        <input name="email" required="required" class="form-control" placeholder="Your Email Address" type="email">
+                                        <span class="input-group-btn">
+                                            <button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-5 col-md-7 col-sm-12">
+                    <div class="row">
+                        <div class="col-4 col-lg-4 col-md-4 col-sm-4">
+                            <div class="widget footer_widget">
+                                <h5 class="footer-title">Company</h5>
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/about/">About</a></li>
+                                    <li><a href="/faq/">FAQs</a></li>
+                                    <li><a href="/contact/">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-4 col-md-4 col-sm-4">
+                            <div class="widget footer_widget">
+                                <h5 class="footer-title">Get In Touch</h5>
+                                <ul>
+                                        {% if user.is_authenticated %}
+										<li><a href="/dashboard/">Dashboard</a></li>
+										{% else %}
+                                        <li><a href="/accounts/login/">Login</a></li>
+                                        {% endif %}
+                                        <li><a href="/blog/">Blog</a></li>
+									</ul>
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-4 col-md-4 col-sm-4">
+                            <div class="widget footer_widget">
+                                <h5 class="footer-title">Courses</h5>
+                                <ul>
+                                    <li><a href="/courses/">Courses</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
+                        <div class="widget widget_gallery gallery-grid-4">
+                            <h5 class="footer-title">Our Partners</h5>
+                            <ul class="magnific-image">
+                                <li><a href="{% static 'assets/images/gallery/pic.jpg' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic.jpg' %}" alt=""></a></li>
+                                <li><a href="{% static 'assets/images/gallery/pic1.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic1.png' %}" alt=""></a></li>
+                                <li><a href="{% static 'assets/images/gallery/pic2.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic2.png' %}" alt=""></a></li>
+                                <li><a href="{% static 'assets/images/gallery/pic3.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic3.png' %}" alt=""></a></li>
+                                <li><a href="{% static 'assets/images/gallery/pic4.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic4.png' %}" alt=""></a></li>
+                                <li><a href="{% static 'assets/images/gallery/pic6.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic6.png' %}" alt=""></a></li>
+                                <li><a href="{% static 'assets/images/gallery/pic7.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic7.png' %}" alt=""></a></li>
+                                <li><a href="{% static 'assets/images/gallery/pic8.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic8.png' %}" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a href="#">SEN 201 (GROUP H)</a></div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer END ==== -->
+    <button class="back-to-top fa fa-chevron-up"></button>
+</div>
+<!-- External JavaScripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js' %}"></script>
+<script src="{% static 'assets/vendors/magnific-popup/magnific-popup.js' %}"></script>
+<script src="{% static 'assets/vendors/counter/waypoints-min.js' %}"></script>
+<script src="{% static 'assets/vendors/counter/counterup.min.js' %}"></script>
+<script src="{% static 'assets/vendors/imagesloaded/imagesloaded.js' %}"></script>
+<script src="{% static 'assets/vendors/masonry/masonry.js' %}"></script>
+<script src="{% static 'assets/vendors/masonry/filter.js' %}"></script>
+<script src="{% static 'assets/vendors/owl-carousel/owl.carousel.js' %}"></script>
+<script src="{% static 'assets/js/functions.js' %}"></script>
+<script src="{% static 'assets/js/contact.js' %}"></script>
+<script src="{% static 'assets/vendors/switcher/switcher.js' %}"></script>
+</body>
+
+</html>

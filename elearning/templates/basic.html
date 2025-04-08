@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block meta %}
+  
+  {% endblock meta %}
+  <title>
+    {% block title %}{% endblock title %}
+
+  </title>
+
+  <!-- All PLUGINS CSS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/assets.css' %}">
+	
+	<!-- TYPOGRAPHY ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/typography.css' %}">
+	
+	<!-- SHORTCODES ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/shortcodes/shortcodes.css' %}">
+	
+	<!-- STYLESHEETS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+	<link class="skin" rel="stylesheet" type="text/css" href="{% static 'assets/css/color/color-1.css' %}">
+	
+    
+  {% block stylecss %}
+  
+  {% endblock stylecss %}
+
+
+</head>
+<body id="bg">
+{% block body %}
+
+{% endblock body %}
+</body>
+
+</html>
