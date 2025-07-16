@@ -8,18 +8,42 @@ class Course(models.Model):
         ('300', '300 Level'),
         ('400', '400 Level'),
         ('500', '500 Level'),
+        ('600', '600 Level'),
     ]
 
     thumbnail = models.ImageField(upload_to='course_thumbnails/', blank=True, null=True)
     title = models.CharField(max_length=200)
-    lecturer = models.CharField(max_length=100)
+    lecturer = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        limit_choices_to={'userprofile__role': 'LECTURER'},
+        related_name='courses_taught'
+    )
     level = models.CharField(max_length=50, choices=LEVEL_CHOICES)
     department = models.CharField(max_length=100)
     description = models.TextField()
-    document_link = models.URLField(blank=True, null=True)  # Link to course material
+    document_link = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.title
+
+    @classmethod
+    def get_level_choices(cls):
+        return cls.LEVEL_CHOICES
+
+
+class CourseTopic(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='topics')
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+
+    def __str__(self):
+        return f"{self.course.title} - {self.title}"
 
 class UserCourse(models.Model):
     user_profile = models.ForeignKey('accounts.UserProfile', on_delete=models.CASCADE)

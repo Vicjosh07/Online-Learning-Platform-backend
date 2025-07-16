@@ -57,13 +57,14 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/revolution/css/settings.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/revolution/css/navigation.css' %}">
     <!-- REVOLUTION SLIDER END -->
+
 </head>
 <body id="bg">
 <div class="page-wraper">
     <div id="loading-icon-bx"></div>
     <div class="account-form">
         <div class="account-head" style="background-image:url({% static 'assets/images/background/bg2.jpg' %});">
-            <a href="/"><img src="{% static 'assets/images/logo-white-2.png' %}" alt=""></a>
+            <a href="/"><img src="{% static 'assets/images/uniabuja01.png' %}" alt="" width="150" height="150"></a>
         </div>
         <div class="account-form-inner">
             <div class="account-container">
@@ -80,9 +81,9 @@
                     </div>
                 {% endif %}
                     <h2 class="title-head">Sign Up <span>Now</span></h2>
-                    <p>Login Your Account <a href="/accounts/login/">Click here</a></p>
-                </div>
-                <form class="contact-bx" method="post" action="/accounts/register/">
+<p>Login Your Account <a href="/accounts/login/">Click here</a></p>
+</div>
+<form class="contact-bx" method="post" action="/accounts/register/">
     {% csrf_token %}
     <!-- Form fields -->
     <div class="row placeani">
@@ -90,7 +91,7 @@
             <div class="form-group">
                 <div class="input-group">
                     <label>Your preferred Username</label>
-                    <input name="username" type="text" required="" class="form-control">
+                    <input name="username" type="text" required class="form-control">
                 </div>
             </div>
         </div>
@@ -112,22 +113,39 @@
         </div>
 
         <div class="col-lg-12">
-            <div class="form-group">
-                <div class="input-group">
-                    <label>Your First Name </label>
-                    <input name="first_name" type="text" required class="form-control">
-                </div>
-            </div>
+    <div class="form-group">
+        <label for="id_role">Role Type</label>
+        <div class="input-group">
+            <select name="role" id="id_role" required class="input-group">
+                <option value="" disabled {% if not selected_role %}selected{% endif %}>-- Select Role Type --</option>
+                {% for value, label in role_choices %}
+                    <option value="{{ value }}" {% if value == selected_role %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
         </div>
+    </div>
+</div>
 
+        
+        <!-- Existing fields -->
         <div class="col-lg-12">
             <div class="form-group">
                 <div class="input-group">
-                    <label>Your Last Name</label>
-                    <input name="last_name" type="text" required class="form-control">
+                    <label>First Name with prefix</label>
+                    <input name="first_name" type="text" class="form-control">
                 </div>
             </div>
         </div>
+        <div class="col-lg-12">
+            <div class="form-group">
+                <div class="input-group">
+                    <label>Last Name</label>
+                    <input name="last_name" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+        <!-- Other existing fields... -->
+
 
         <div class="col-lg-12">
             <div class="form-group">

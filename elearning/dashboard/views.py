@@ -1,19 +1,23 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
+from accounts.decorators import role_required
 from .models import Course, UserCourse
 from accounts.models import UserProfile
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
+from PIL import Image
+from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
 
 
+
+@login_required
+@role_required('STUDENT', 'VISITOR')
 def dashb(request):
     if not request.user.is_authenticated:
         return redirect('/accounts/login/')  # Redirect to login page if not authenticated
-    return render(request, 'dashboard/index.html')
-
-@login_required
-def course(request):
     try:
         user_profile = UserProfile.objects.get(user=request.user)
     except ObjectDoesNotExist:
@@ -28,7 +32,10 @@ def course(request):
         'personalized_courses': personalized_courses,
     }
     return render(request, 'dashboard/courses.html', context)
+
+
 @login_required
+@role_required('STUDENT', 'VISITOR')
 def add_course(request, course_id):
     # Get the course and user profile
     course = get_object_or_404(Course, id=course_id)
@@ -41,7 +48,7 @@ def add_course(request, course_id):
     else:
         messages.warning(request, f"Course '{course.title}' is already in your dashboard.")
 
-    return redirect('course')
+    return redirect('dashb')
 
 
 @login_required
@@ -56,7 +63,7 @@ def remove_course(request, user_course_id):
     messages.success(request, "Course removed successfully!")
 
     # Redirect back to the user's courses page
-    return redirect('course')
+    return redirect('dashb')
 
 
 @login_required
@@ -77,21 +84,49 @@ def profile(request):
 @login_required
 def update_profile(request):
     if request.method == 'POST':
-        # Fetch the UserProfile for the logged-in user
         user_profile = UserProfile.objects.get(user=request.user)
 
-        # Update the fields from the form data
+        # Update text fields
         user_profile.occupation = request.POST.get('occupation', '')
         user_profile.phonenumber = request.POST.get('phonenumber', '')
         user_profile.description = request.POST.get('description', '')
         user_profile.linkedin = request.POST.get('linkedin', '')
         user_profile.facebook = request.POST.get('facebook', '')
 
-        # Save the changes
-        user_profile.user.save()
+        # Handle profile picture upload
+        if 'profile_pic' in request.FILES:
+            img = Image.open(request.FILES['profile_pic'])
+
+            # Resize image to 200x200
+            try:
+                if img.height > 200 or img.width > 200:
+                    output_size = (200, 200)
+                    img.thumbnail(output_size)
+
+                    # Convert to BytesIO
+                    output = BytesIO()
+                    img.save(output, format='JPEG', quality=90)
+                    output.seek(0)
+
+                    # Create new InMemoryUploadedFile
+                    user_profile.profile_pic = InMemoryUploadedFile(
+                        output,
+                        'ImageField',
+                        f"{request.FILES['profile_pic'].name}",
+                        'image/jpeg',
+                        output.tell(),
+                        None
+                    )
+                else:
+                    user_profile.profile_pic = request.FILES['profile_pic']
+
+            except:
+                messages.warning(request, f"The image exceeds approparite dimension.")
+            
+
         user_profile.save()
-
         messages.success(request, 'Profile updated successfully!')
-        return redirect('course')
 
-    return redirect('profile')
+        if user_profile.role == 'LECTURER':
+            return redirect('upload_course')
+        return redirect('dashb')

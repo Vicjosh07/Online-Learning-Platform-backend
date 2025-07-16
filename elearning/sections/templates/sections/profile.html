@@ -4,77 +4,88 @@
 
 <head>
 
-    <!-- META ============================================= -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <meta name="robots" content="" />
-    
-    <!-- DESCRIPTION -->
-    <meta name="description" content="EduChamp : Education HTML Template" />
-    
-    <!-- OG -->
-    <meta property="og:title" content="EduChamp : Education HTML Template" />
-    <meta property="og:description" content="EduChamp : Education HTML Template" />
-    <meta property="og:image" content="" />
-    <meta name="format-detection" content="telephone=no">
-    
-    <!-- FAVICONS ICON ============================================= -->
-    <link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}" />
-    
-    <!-- PAGE TITLE HERE ============================================= -->
-    <title>EduChamp : Education HTML Template </title>
-    
-    <!-- MOBILE SPECIFIC ============================================= -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+	<!-- META ============================================= -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="" />
+
+	<!-- DESCRIPTION -->
+	<meta name="description" content="EduChamp : Education HTML Template" />
+
+	<!-- OG -->
+	<meta property="og:title" content="EduChamp : Education HTML Template" />
+	<meta property="og:description" content="EduChamp : Education HTML Template" />
+	<meta property="og:image" content="" />
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- FAVICONS ICON ============================================= -->
+	<link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon" />
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}" />
+
+	<!-- PAGE TITLE HERE ============================================= -->
+	<title>EduChamp : Education HTML Template </title>
+
+	<!-- MOBILE SPECIFIC ============================================= -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--[if lt IE 9]>
+	<script src="{% static 'assets/js/html5shiv.min.js' %}"></script>
+	<script src="{% static 'assets/js/respond.min.js' %}"></script>
+	<![endif]-->
+
+	<!-- All PLUGINS CSS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/assets.css' %}">
+
+	<!-- TYPOGRAPHY ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/typography.css' %}">
+
+	<!-- SHORTCODES ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/shortcodes/shortcodes.css' %}">
+
+	<!-- STYLESHEETS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+	<link class="skin" rel="stylesheet" type="text/css" href="{% static 'assets/css/color/color-1.css' %}">
+
     <!--[if lt IE 9]>
-    <script src="{% static 'assets/js/html5shiv.min.js' %}"></script>
-    <script src="{% static 'assets/js/respond.min.js' %}"></script>
-    <![endif]-->
-    
-    <!-- All PLUGINS CSS ============================================= -->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/assets.css' %}">
-    
-    <!-- TYPOGRAPHY ============================================= -->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/typography.css' %}">
-    
-    <!-- SHORTCODES ============================================= -->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/shortcodes/shortcodes.css' %}">
-    
-    <!-- STYLESHEETS ============================================= -->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
-    <link class="skin" rel="stylesheet" type="text/css" href="{% static 'assets/css/color/color-1.css' %}">
-    
+	<script src="{% static 'admin/assets/js/html5shiv.min.js' %}"></script>
+	<script src="{% static 'admin/assets/js/respond.min.js' %}"></script>
+	<![endif]-->
+
+	<!-- All PLUGINS CSS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/assets.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/vendors/calendar/fullcalendar.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/vendors/summernote/summernote.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/vendors/file-upload/imageuploadify.min.css' %}">
+
+	<!-- TYPOGRAPHY ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/typography.css' %}">
+
+	<!-- SHORTCODES ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/shortcodes/shortcodes.css' %}">
+
+	<!-- STYLESHEETS ============================================= -->
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/dashboard.css' %}">
+	<link class="skin" rel="stylesheet" type="text/css" href="{% static 'admin/assets/css/color/color-1.css' %}">
+
 </head>
 <body id="bg">
 <div class="page-wraper">
-    <div id="loading-icon-bx"></div>
+	<div id="loading-icon-bx"></div>
     <!-- Header Top ==== -->
-    <header class="header rs-nav">
+    <header class="header rs-nav header-transparent">
         <div class="top-bar">
             <div class="container">
                 <div class="row d-flex justify-content-between">
                     <div class="topbar-left">
                         <ul>
-                            <li><a href="{% static 'faq-1.html' %}"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
-                            <li><a href="javascript:;"><i class="fa fa-envelope-o"></i>Support@website.com</a></li>
+                            <li><a href="/faq/"><i class="fa fa-question-circle"></i>Ask a Question</a></li>
+                            <li><a href="mailto: info@uniabuja.edu.ng?subject=Your Question" target="_blank"><i class="fa fa-envelope-o"></i>info@uniabuja.edu.ng</a></li>
                         </ul>
                     </div>
-                    <div class="topbar-right">
-                        <ul>
-                            <li>
-                                <select class="header-lang-bx">
-                                    <option data-icon="flag flag-uk">English UK</option>
-                                    <option data-icon="flag flag-us">English US</option>
-                                </select>
-                            </li>
-                            <li><a href="{% static 'login.html' %}">Login</a></li>
-                            <li><a href="{% static 'register.html' %}">Register</a></li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -83,7 +94,7 @@
                 <div class="container clearfix">
                     <!-- Header Logo ==== -->
                     <div class="menu-logo">
-                        <a href="{% static 'index.html' %}"><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
+                        <a href="/"><img src="{% static 'assets/images/uniabuja02.png' %}" alt=""></a>
                     </div>
                     <!-- Mobile Nav Button ==== -->
                     <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,116 +106,36 @@
                     <div class="secondary-menu">
                         <div class="secondary-inner">
                             <ul>
-                                <li><a href="javascript:;" class="btn-link"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://web.facebook.com/@universityofabuja" class="btn-link" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.linkedin.com/school/university-of-abuja/" target="_blank" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
                                 <!-- Search Button ==== -->
-                                <li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li>
+
                             </ul>
                         </div>
                     </div>
-                    <!-- Search Box ==== -->
-                    <div class="nav-search-bar">
-                        <form action="#">
-                            <input name="search" value="" type="text" class="form-control" placeholder="Type to search">
-                            <span><i class="ti-search"></i></span>
-                        </form>
-                        <span id="search-remove"><i class="ti-close"></i></span>
-                    </div>
+
                     <!-- Navigation Menu ==== -->
                     <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
                         <div class="menu-logo">
-                            <a href="{% static 'index.html' %}"><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
+                            <a href="/"><img src="{% static 'assets/images/uniabuja.png' %}" alt=""></a>
                         </div>
-                        <ul class="nav navbar-nav">    
-                            <li class="active"><a href="javascript:;">Home <i class="fa fa-chevron-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% static 'index.html' %}">Home 1</a></li>
-                                    <li><a href="{% static 'index-2.html' %}">Home 2</a></li>
-                                </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Home </a></li>
+
+                            <li ><a href="/courses/">Our Courses </a></li>
+
+                            <li><a href="/about/">About </a></li>
+
+                            <li><a href="/faq/">FAQ's </a>
                             </li>
-                            <li><a href="javascript:;">Pages <i class="fa fa-chevron-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li><a href="javascript:;">About<i class="fa fa-angle-right"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{% static 'about-1.html' %}">About 1</a></li>
-                                            <li><a href="{% static 'about-2.html' %}">About 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="javascript:;">Event<i class="fa fa-angle-right"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{% static 'event.html' %}">Event</a></li>
-                                            <li><a href="{% static 'events-details.html' %}">Events Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="javascript:;">FAQ's<i class="fa fa-angle-right"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{% static 'faq-1.html' %}">FAQ's 1</a></li>
-                                            <li><a href="{% static 'faq-2.html' %}">FAQ's 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="javascript:;">Contact Us<i class="fa fa-angle-right"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{% static 'contact-1.html' %}">Contact Us 1</a></li>
-                                            <li><a href="{% static 'contact-2.html' %}">Contact Us 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="{% static 'portfolio.html' %}">Portfolio</a></li>
-                                    <li><a href="{% static 'profile.html' %}">Profile</a></li>
-                                    <li><a href="{% static 'membership.html' %}">Membership</a></li>
-                                    <li><a href="{% static 'error-404.html' %}">404 Page</a></li>
-                                </ul>
+                            <li><a href="/contact/">Contact Us</a>
                             </li>
-                            <li class="add-mega-menu"><a href="javascript:;">Our Courses <i class="fa fa-chevron-down"></i></a>
-                                <ul class="sub-menu add-menu">
-                                    <li class="add-menu-left">
-                                        <h5 class="menu-adv-title">Our Courses</h5>
-                                        <ul>
-                                            <li><a href="{% static 'courses.html' %}">Courses </a></li>
-                                            <li><a href="{% static 'courses-details.html' %}">Courses Details</a></li>
-                                            <li><a href="{% static 'profile.html' %}">Instructor Profile</a></li>
-                                            <li><a href="{% static 'event.html' %}">Upcoming Event</a></li>
-                                            <li><a href="{% static 'membership.html' %}">Membership</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="add-menu-right">
-                                        <img src="{% static 'assets/images/adv/adv.jpg' %}" alt=""/>
-                                    </li>
-                                </ul>
+                            <li><a href="/blog/">Blog </a>
                             </li>
-                            <li><a href="javascript:;">Blog <i class="fa fa-chevron-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% static 'blog-classic-grid.html' %}">Blog Classic</a></li>
-                                    <li><a href="{% static 'blog-classic-sidebar.html' %}">Blog Classic Sidebar</a></li>
-                                    <li><a href="{% static 'blog-list-sidebar.html' %}">Blog List Sidebar</a></li>
-                                    <li><a href="{% static 'blog-standard-sidebar.html' %}">Blog Standard Sidebar</a></li>
-                                    <li><a href="{% static 'blog-details.html' %}">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-dashboard"><a href="javascript:;">Dashboard <i class="fa fa-chevron-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% static 'admin/index.html' %}">Dashboard</a></li>
-                                    <li><a href="{% static 'admin/add-listing.html' %}">Add Listing</a></li>
-                                    <li><a href="{% static 'admin/bookmark.html' %}">Bookmark</a></li>
-                                    <li><a href="{% static 'admin/courses.html' %}">Courses</a></li>
-                                    <li><a href="{% static 'admin/review.html' %}">Review</a></li>
-                                    <li><a href="{% static 'admin/teacher-profile.html' %}">Teacher Profile</a></li>
-                                    <li><a href="{% static 'admin/user-profile.html' %}">User Profile</a></li>
-                                    <li><a href="javascript:;">Calendar<i class="fa fa-angle-right"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{% static 'admin/basic-calendar.html' %}">Basic Calendar</a></li>
-                                            <li><a href="{% static 'admin/list-view-calendar.html' %}">List View Calendar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="javascript:;">Mailbox<i class="fa fa-angle-right"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{% static 'admin/mailbox.html' %}">Mailbox</a></li>
-                                            <li><a href="{% static 'admin/mailbox-compose.html' %}">Compose</a></li>
-                                            <li><a href="{% static 'admin/mailbox-read.html' %}">Mail Read</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
+                            {% if user.is_authenticated %}
+                            <li><a href="/accounts/logout/">Logout</a></li>
+                            {% else %}
+                            {% endif %}
                         </ul>
                         <div class="nav-social-link">
                             <a href="javascript:;"><i class="fa fa-facebook"></i></a>
@@ -225,644 +156,375 @@
             <div class="container">
                 <div class="page-banner-entry">
                     <h1 class="text-white">Profile</h1>
+				 </div>
+            </div>
+        </div>
+		<!-- Breadcrumb row -->
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="/">Home</a></li>
+					<li>Profile</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Breadcrumb row END -->
+        <!-- inner page banner END -->
+		<div class="content-block">
+            <!-- About Us -->
+			<div class="section-area section-sp1">
+                 <!-- Success Message Block -->
+                {% if messages %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif %}
+                <div class="container">
+					 <div class="row">
+						<div class="col-lg-3 col-md-4 col-sm-12 m-b30">
+							<div class="profile-bx text-center">
+								<div class="user-profile-thumb">
+									<img src="{{ user.userprofile.profile_pic.url }}" alt="Profile Picture"/>
+								</div>
+								<div class="profile-info">
+									<h4>{{ user_profile.user.get_full_name }}</h4>
+									<span>{{ user_profile.user.email }}</span>
+								</div>
+								<div class="profile-social">
+									<ul class="list-inline m-a0">
+										<li><a href="{{ user_profile.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="{{ user_profile.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+
+									</ul>
+								</div>
+								<div class="profile-tabnav">
+									<ul class="nav nav-tabs">
+										<li class="nav-item">
+											<a class="nav-link active" data-toggle="tab" href="#courses"><i class="ti-book"></i>Courses</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#upload_course"><i class="ti-bookmark-alt"></i>Upload Course </a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#edit-profile"><i class="ti-pencil-alt"></i>Edit Profile</a>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-9 col-md-8 col-sm-12 m-b30">
+							<div class="profile-content-bx">
+								<div class="tab-content">
+									<div class="tab-pane active" id="courses">
+   <div class="profile-head">
+    <h3>My Courses</h3>
+    <div class="ml-auto">
+        <!-- Modified button to activate the tab instead of jumping -->
+        <a href="#upload_course" class="btn" data-toggle="tab" onclick="$('.nav-tabs a[href=\'#upload_course\']').tab('show'); return false;">
+            Upload New Course
+        </a>
+    </div>
+</div>
+
+    <div class="courses-filter">
+        <div class="clearfix">
+            <ul id="masonry" class="ttr-gallery-listing magnific-image row">
+                {% if user.courses_taught.all %}
+                    {% for course in user.courses_taught.all %}
+                    <li class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6">
+                        <div class="cours-bx">
+                            <div class="action-box">
+                                {% if course.thumbnail %}
+                                    <img src="{{ course.thumbnail.url }}" alt="{{ course.title }}">
+                                {% else %}
+                                    <img src="{% static 'assets/images/courses/default-course.jpg' %}" alt="Default course image">
+                                {% endif %}
+                                <a href="{{ course.document_link }}" target="_blank" class="btn">Edit Details</a>
+                            </div>
+                            <div class="info-bx text-center">
+                                <h5><a href="#">{{ course.title }}</a></h5>
+                                <span>{{ course.department }} - {{ course.level }} LEVEL</span>
+                            </div>
+                            <div class="review text-center" style="padding: 10px 0; margin-top: 10px; border-top: 1px solid #eee;">
+                                <a href="{{ course.document_link }}" class="btn green radius-xl outline" target="_blank" style="margin-right: 5px;">Open</a>
+                                <a href="{% url 'delete_course' course.id %}" class="btn red outline radius-xl" onclick="return confirm('Are you sure you want to delete this course?');">Delete</a>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                {% else %}
+                    <li class="col-12">
+                        <div class="empty-state text-center py-5">
+                            <a href="#upload_course" onclick="$('.nav-tabs a[href=\'#upload_course\']').tab('show'); return false;"><img src="{% static 'assets/images/empty-courses.png' %}" alt="No courses" class="mb-4" width="350px" height="350px"></a>
+                            <h4>You haven't uploaded any courses yet</h4>
+                            <p class="text-muted">Get started by uploading your first course material</p>
+
+                        </div>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+									<div class="tab-pane mail-list-container" id="upload_course">
+    <form class="mail-compose" method="POST" enctype="multipart/form-data" id="course-form">
+        {% csrf_token %}
+        <!-- Course Title -->
+        <div class="form-group col-12">
+            <input class="form-control" type="text" name="title" placeholder="Course Title" required>
+        </div>
+
+        <!-- Google Drive Link -->
+        <div class="form-group col-12">
+            <input class="form-control" type="url" name="document_link" placeholder="Google Drive/Cloud Link" required>
+        </div>
+
+        <!-- Level Selection -->
+        <div class="form-group col-12">
+    <select class="form-control" name="level" required>
+        <option value="">Select Level</option>
+        {% for value, label in levels %}
+        <option value="{{ value }}">{{ label }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+        <!-- Department -->
+        <div class="form-group col-12">
+            <input class="form-control" type="text" name="department" placeholder="Department" required>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group col-12">
+            <textarea class="form-control" name="description" placeholder="Course Description" required></textarea>
+        </div>
+
+        <!-- Thumbnail Upload -->
+        <div class="form-group col-12">
+            <label>Course Thumbnail (only .png, .jpg)</label>
+            <input type="file" name="thumbnail" accept="image/png, image/jpeg, image/jpg" multiple  required >
+        </div>
+
+        <div class="form-group col-12">
+            <button type="submit" class="btn btn-lg">Upload Course</button>
+        </div>
+    </form>
+</div>
+									<div class="tab-pane" id="edit-profile">
+										<div class="profile-head">
+											<h3>Edit Profile</h3>
+										</div>
+										<form class="edit-profile" method="post" action="{% url 'update_profile' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="">
+            <div class="form-group row">
+                <div class="col-sm-10 ml-auto">
+                    <h3>1. Personal Details</h3>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Full Name</label>
+                <div class="col-sm-7">
+                    <input class="form-control" type="text" name="full_name" value="{{ user_profile.user.get_full_name }}" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Occupation</label>
+                <div class="col-sm-7">
+                    <input class="form-control" type="text" name="occupation" value="{{ user_profile.occupation }}" placeholder="Your Occupation">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Matric/Reg No.</label>
+                <div class="col-sm-7">
+                    <input class="form-control" type="text" name="Matric" value="{{ user_profile.matric }}" placeholder="Your Occupation">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Phone No.</label>
+                <div class="col-sm-7">
+                    <input class="form-control" type="text" name="phonenumber" value="{{ user_profile.phonenumber }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-7">
+                    <textarea class="form-control" name="description">{{ user_profile.description }}</textarea>
+                </div>
+            </div>
+
+            <div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
+
+            <div class="form-group row">
+                <div class="col-sm-10 ml-auto">
+                    <h3 class="m-form__section">2. Social Links</h3>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Linkedin</label>
+                <div class="col-sm-7">
+                    <input class="form-control" type="text" name="linkedin" value="{{ user_profile.linkedin }}" placeholder="Your Linkedln link">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Facebook</label>
+                <div class="col-sm-7">
+                    <input class="form-control" type="text" name="facebook" value="{{ user_profile.facebook }}" placeholder="Your Facebook link">
                 </div>
             </div>
         </div>
-        <!-- Breadcrumb row -->
-        <div class="breadcrumb-row">
-            <div class="container">
-                <ul class="list-inline">
-                    <li><a href="#">Home</a></li>
-                    <li>Profile</li>
-                </ul>
-            </div>
+
+
+                   <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Profile Picture</label>
+    <div class="col-sm-7">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" name="profile_pic" accept="image/*" id="profilePicUpload">
+            <label class="custom-file-label" for="profilePicUpload">Choose file</label>
         </div>
-        <!-- Breadcrumb row END -->
-        <!-- inner page banner END -->
-        <div class="content-block">
-            <!-- About Us -->
-            <div class="section-area section-sp1">
-                <div class="container">
-                     <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-12 m-b30">
-                            <div class="profile-bx text-center">
-                                <div class="user-profile-thumb">
-                                    <img src="{% static 'assets/images/profile/pic1.jpg' %}" alt=""/>
-                                </div>
-                                <div class="profile-info">
-                                    <h4>Mark Andre</h4>
-                                    <span>mark.example@info.com</span>
-                                </div>
-                                <div class="profile-social">
-                                    <ul class="list-inline m-a0">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="profile-tabnav">
-                                    <ul class="nav nav-tabs">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#courses"><i class="ti-book"></i>Courses</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#quiz-results"><i class="ti-bookmark-alt"></i>Quiz Results </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#edit-profile"><i class="ti-pencil-alt"></i>Edit Profile</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#change-password"><i class="ti-lock"></i>Change Password</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-8 col-sm-12 m-b30">
-                            <div class="profile-content-bx">
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="courses">
-                                        <div class="profile-head">
-                                            <h3>My Courses</h3>
-                                            <div class="feature-filters style1 ml-auto">
-                                                <ul class="filters" data-toggle="buttons">
-                                                    <li data-filter="" class="btn active">
-                                                        <input type="radio">
-                                                        <a href="#"><span>All</span></a> 
-                                                    </li>
-                                                    <li data-filter="publish" class="btn">
-                                                        <input type="radio">
-                                                        <a href="#"><span>Publish</span></a> 
-                                                    </li>
-                                                    <li data-filter="pending" class="btn">
-                                                        <input type="radio">
-                                                        <a href="#"><span>Pending</span></a> 
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="courses-filter">
-                                            <div class="clearfix">
-                                                <ul id="masonry" class="ttr-gallery-listing magnific-image row">
-                                                    <li class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6 publish">
-                                                        <div class="cours-bx">
-                                                            <div class="action-box">
-                                                                <img src="{% static 'assets/images/courses/pic1.jpg' %}" alt="">
-                                                                <a href="#" class="btn">Read More</a>
-                                                            </div>
-                                                            <div class="info-bx text-center">
-                                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-                                                                <span>Programming</span>
-                                                            </div>
-                                                            <div class="cours-more-info">
-                                                                <div class="review">
-                                                                    <span>3 Review</span>
-                                                                    <ul class="cours-star">
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <del>$190</del>
-                                                                    <h5>$120</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6 pending">
-                                                        <div class="cours-bx">
-                                                            <div class="action-box">
-                                                                <img src="{% static 'assets/images/courses/pic2.jpg' %}" alt="">
-                                                                <a href="#" class="btn">Read More</a>
-                                                            </div>
-                                                            <div class="info-bx text-center">
-                                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-                                                                <span>Programming</span>
-                                                            </div>
-                                                            <div class="cours-more-info">
-                                                                <div class="review">
-                                                                    <span>3 Review</span>
-                                                                    <ul class="cours-star">
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <del>$190</del>
-                                                                    <h5>$120</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6 publish">
-                                                        <div class="cours-bx">
-                                                            <div class="action-box">
-                                                                <img src="{% static 'assets/images/courses/pic3.jpg' %}" alt="">
-                                                                <a href="#" class="btn">Read More</a>
-                                                            </div>
-                                                            <div class="info-bx text-center">
-                                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-                                                                <span>Programming</span>
-                                                            </div>
-                                                            <div class="cours-more-info">
-                                                                <div class="review">
-                                                                    <span>3 Review</span>
-                                                                    <ul class="cours-star">
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <del>$190</del>
-                                                                    <h5>$120</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6 pending">
-                                                        <div class="cours-bx">
-                                                            <div class="action-box">
-                                                                <img src="{% static 'assets/images/courses/pic4.jpg' %}" alt="">
-                                                                <a href="#" class="btn">Read More</a>
-                                                            </div>
-                                                            <div class="info-bx text-center">
-                                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-                                                                <span>Programming</span>
-                                                            </div>
-                                                            <div class="cours-more-info">
-                                                                <div class="review">
-                                                                    <span>3 Review</span>
-                                                                    <ul class="cours-star">
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <del>$190</del>
-                                                                    <h5>$120</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6 publish">
-                                                        <div class="cours-bx">
-                                                            <div class="action-box">
-                                                                <img src="{% static 'assets/images/courses/pic5.jpg' %}" alt="">
-                                                                <a href="#" class="btn">Read More</a>
-                                                            </div>
-                                                            <div class="info-bx text-center">
-                                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-                                                                <span>Programming</span>
-                                                            </div>
-                                                            <div class="cours-more-info">
-                                                                <div class="review">
-                                                                    <span>3 Review</span>
-                                                                    <ul class="cours-star">
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <del>$190</del>
-                                                                    <h5>$120</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6 pending">
-                                                        <div class="cours-bx">
-                                                            <div class="action-box">
-                                                                <img src="{% static 'assets/images/courses/pic6.jpg' %}" alt="">
-                                                                <a href="#" class="btn">Read More</a>
-                                                            </div>
-                                                            <div class="info-bx text-center">
-                                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-                                                                <span>Programming</span>
-                                                            </div>
-                                                            <div class="cours-more-info">
-                                                                <div class="review">
-                                                                    <span>3 Review</span>
-                                                                    <ul class="cours-star">
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <del>$190</del>
-                                                                    <h5>$120</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6 publish">
-                                                        <div class="cours-bx">
-                                                            <div class="action-box">
-                                                                <img src="{% static 'assets/images/courses/pic7.jpg' %}" alt="">
-                                                                <a href="#" class="btn">Read More</a>
-                                                            </div>
-                                                            <div class="info-bx text-center">
-                                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-                                                                <span>Programming</span>
-                                                            </div>
-                                                            <div class="cours-more-info">
-                                                                <div class="review">
-                                                                    <span>3 Review</span>
-                                                                    <ul class="cours-star">
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <del>$190</del>
-                                                                    <h5>$120</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6 book">
-                                                        <div class="cours-bx">
-                                                            <div class="action-box">
-                                                                <img src="{% static 'assets/images/courses/pic8.jpg' %}" alt="">
-                                                                <a href="#" class="btn">Read More</a>
-                                                            </div>
-                                                            <div class="info-bx text-center">
-                                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-                                                                <span>Programming</span>
-                                                            </div>
-                                                            <div class="cours-more-info">
-                                                                <div class="review">
-                                                                    <span>3 Review</span>
-                                                                    <ul class="cours-star">
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <del>$190</del>
-                                                                    <h5>$120</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="action-card col-xl-4 col-lg-6 col-md-12 col-sm-6 publish">
-                                                        <div class="cours-bx">
-                                                            <div class="action-box">
-                                                                <img src="{% static 'assets/images/courses/pic9.jpg' %}" alt="">
-                                                                <a href="#" class="btn">Read More</a>
-                                                            </div>
-                                                            <div class="info-bx text-center">
-                                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-                                                                <span>Programming</span>
-                                                            </div>
-                                                            <div class="cours-more-info">
-                                                                <div class="review">
-                                                                    <span>3 Review</span>
-                                                                    <ul class="cours-star">
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li class="active"><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                        <li><i class="fa fa-star"></i></li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <del>$190</del>
-                                                                    <h5>$120</h5>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="quiz-results">
-                                        <div class="profile-head">
-                                            <h3>Quiz Results</h3>
-                                        </div>
-                                        <div class="courses-filter">
-                                            <div class="row">
-                                                <div class="col-md-6 col-lg-6">
-                                                    <ul class="course-features">
-                                                        <li><i class="ti-book"></i> <span class="label">Lectures</span> <span class="value">8</span></li>
-                                                        <li><i class="ti-help-alt"></i> <span class="label">Quizzes</span> <span class="value">1</span></li>
-                                                        <li><i class="ti-time"></i> <span class="label">Duration</span> <span class="value">60 hours</span></li>
-                                                        <li><i class="ti-stats-up"></i> <span class="label">Skill level</span> <span class="value">Beginner</span></li>
-                                                        <li><i class="ti-smallcap"></i> <span class="label">Language</span> <span class="value">English</span></li>
-                                                        <li><i class="ti-user"></i> <span class="label">Students</span> <span class="value">32</span></li>
-                                                        <li><i class="ti-check-box"></i> <span class="label">Assessments</span> <span class="value">Yes</span></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-md-6 col-lg-6">
-                                                    <ul class="course-features">
-                                                        <li><i class="ti-book"></i> <span class="label">Lectures</span> <span class="value">8</span></li>
-                                                        <li><i class="ti-help-alt"></i> <span class="label">Quizzes</span> <span class="value">1</span></li>
-                                                        <li><i class="ti-time"></i> <span class="label">Duration</span> <span class="value">60 hours</span></li>
-                                                        <li><i class="ti-stats-up"></i> <span class="label">Skill level</span> <span class="value">Beginner</span></li>
-                                                        <li><i class="ti-smallcap"></i> <span class="label">Language</span> <span class="value">English</span></li>
-                                                        <li><i class="ti-user"></i> <span class="label">Students</span> <span class="value">32</span></li>
-                                                        <li><i class="ti-check-box"></i> <span class="label">Assessments</span> <span class="value">Yes</span></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="edit-profile">
-                                        <div class="profile-head">
-                                            <h3>Edit Profile</h3>
-                                        </div>
-                                        <form class="edit-profile">
-                                            <div class="">
-                                                <div class="form-group row">
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
-                                                        <h3>1. Personal Details</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Full Name</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="Mark Andre">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Occupation</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="CTO">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Company Name</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="EduChamp">
-                                                        <span class="help">If you want your invoices addressed to a company. Leave blank to use your full name.</span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Phone No.</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="+120 012345 6789">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="seperator"></div>
-                                                
-                                                <div class="form-group row">
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
-                                                        <h3>2. Address</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Address</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="5-S2-20 Dummy City, UK">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">City</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="US">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">State</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="California">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Postcode</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="000702">
-                                                    </div>
-                                                </div>
+        <small class="form-text text-muted">Max 2MB (200x200px recommended)</small>
+    </div>
+</div>
 
-                                                <div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
-
-                                                <div class="form-group row">
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-10 ml-auto">
-                                                        <h3 class="m-form__section">3. Social Links</h3>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Linkedin</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="www.linkedin.com">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Facebook</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="www.facebook.com">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Twitter</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="www.twitter.com">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-3 col-md-3 col-lg-2 col-form-label">Instagram</label>
-                                                    <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                        <input class="form-control" type="text" value="www.instagram.com">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <div class="">
-                                                    <div class="row">
-                                                        <div class="col-12 col-sm-3 col-md-3 col-lg-2">
-                                                        </div>
-                                                        <div class="col-12 col-sm-9 col-md-9 col-lg-7">
-                                                            <button type="reset" class="btn">Save changes</button>
-                                                            <button type="reset" class="btn-secondry">Cancel</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="tab-pane" id="change-password">
-                                        <div class="profile-head">
-                                            <h3>Change Password</h3>
-                                        </div>
-                                        <form class="edit-profile">
-                                            <div class="">
-                                                <div class="form-group row">
-                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-9 ml-auto">
-                                                        <h3>Password</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">Current Password</label>
-                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                        <input class="form-control" type="password" value="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">New Password</label>
-                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                        <input class="form-control" type="password" value="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-12 col-sm-4 col-md-4 col-lg-3 col-form-label">Re Type New Password</label>
-                                                    <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                        <input class="form-control" type="password" value="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-12 col-sm-4 col-md-4 col-lg-3">
-                                                </div>
-                                                <div class="col-12 col-sm-8 col-md-8 col-lg-7">
-                                                    <button type="reset" class="btn">Save changes</button>
-                                                    <button type="reset" class="btn-secondry">Cancel</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
+        <div class="">
+            <div class="">
+                <div class="row">
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-7">
+                        <button type="submit" class="btn">Save changes</button>
+                        <button type="reset" class="btn-secondry">Cancel</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- contact area END -->
+    </form>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+		<!-- contact area END -->
     </div>
     <!-- Content END-->
-    <!-- Footer ==== -->
+
+
+
+	<!-- Footer ==== -->
     <footer>
-        <div class="footer-top">
-            <div class="pt-exebar">
-                <div class="container">
-                    <div class="d-flex align-items-stretch">
-                        <div class="pt-logo mr-auto">
-                            <a href="{% static 'index.html' %}"><img src="{% static 'assets/images/logo-white.png' %}" alt=""/></a>
-                        </div>
-                        <div class="pt-social-link">
-                            <ul class="list-inline m-a0">
-                                <li><a href="#" class="btn-link"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#" class="btn-link"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="pt-btn-join">
-                            <a href="#" class="btn ">Join Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="footer-top">
+        <div class="pt-exebar">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
-                        <div class="widget">
-                            <h5 class="footer-title">Sign Up For A Newsletter</h5>
-                            <p class="text-capitalize m-b20">Weekly Breaking news analysis and cutting edge advices on job searching.</p>
-                            <div class="subscribe-form m-b20">
-                                <form class="subscription-form" action="http://educhamp.themetrades.com/demo/assets/script/mailchamp.php" method="post">
-                                    <div class="ajax-message"></div>
-                                    <div class="input-group">
-                                        <input name="email" required="required"  class="form-control" placeholder="Your Email Address" type="email">
-                                        <span class="input-group-btn">
-                                            <button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
-                                        </span> 
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                <div class="d-flex align-items-stretch">
+                    <div class="pt-logo mr-auto">
+                        <a href="/"><img src="{% static 'assets/images/uniabuja.png' %}" alt="" width="100px" height="100"/></a>
                     </div>
-                    <div class="col-12 col-lg-5 col-md-7 col-sm-12">
-                        <div class="row">
-                            <div class="col-4 col-lg-4 col-md-4 col-sm-4">
-                                <div class="widget footer_widget">
-                                    <h5 class="footer-title">Company</h5>
-                                    <ul>
-                                        <li><a href="{% static 'index.html' %}">Home</a></li>
-                                        <li><a href="{% static 'about-1.html' %}">About</a></li>
-                                        <li><a href="{% static 'faq-1.html' %}">FAQs</a></li>
-                                        <li><a href="{% static 'contact-1.html' %}">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-4 col-lg-4 col-md-4 col-sm-4">
-                                <div class="widget footer_widget">
-                                    <h5 class="footer-title">Get In Touch</h5>
-                                    <ul>
-                                        <li><a href="http://educhamp.themetrades.com/admin/index.html">Dashboard</a></li>
-                                        <li><a href="{% static 'blog-classic-grid.html' %}">Blog</a></li>
-                                        <li><a href="{% static 'portfolio.html' %}">Portfolio</a></li>
-                                        <li><a href="{% static 'event.html' %}">Event</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-4 col-lg-4 col-md-4 col-sm-4">
-                                <div class="widget footer_widget">
-                                    <h5 class="footer-title">Courses</h5>
-                                    <ul>
-                                        <li><a href="{% static 'courses.html' %}">Courses</a></li>
-                                        <li><a href="{% static 'courses-details.html' %}">Details</a></li>
-                                        <li><a href="{% static 'membership.html' %}">Membership</a></li>
-                                        <li><a href="{% static 'profile.html' %}">Profile</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="pt-social-link">
+                        <ul class="list-inline m-a0">
+
+                             <li><a href="https://web.facebook.com/@universityofabuja" class="btn-link" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.linkedin.com/school/university-of-abuja/" target="_blank" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
                     </div>
-                    <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
-                        <div class="widget widget_gallery gallery-grid-4">
-                            <h5 class="footer-title">Our Gallery</h5>
-                            <ul class="magnific-image">
-                                <li><a href="{% static 'assets/images/gallery/pic1.jpg' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic1.jpg' %}" alt=""></a></li>
-                                <li><a href="{% static 'assets/images/gallery/pic2.jpg' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic2.jpg' %}" alt=""></a></li>
-                                <li><a href="{% static 'assets/images/gallery/pic3.jpg' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic3.jpg' %}" alt=""></a></li>
-                                <li><a href="{% static 'assets/images/gallery/pic4.jpg' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic4.jpg' %}" alt=""></a></li>
-                                <li><a href="{% static 'assets/images/gallery/pic5.jpg' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic5.jpg' %}" alt=""></a></li>
-                                <li><a href="{% static 'assets/images/gallery/pic6.jpg' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic6.jpg' %}" alt=""></a></li>
-                                <li><a href="{% static 'assets/images/gallery/pic7.jpg' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic7.jpg' %}" alt=""></a></li>
-                                <li><a href="{% static 'assets/images/gallery/pic8.jpg' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic8.jpg' %}" alt=""></a></li>
-                            </ul>
-                        </div>
+                    <div class="pt-btn-join">
+                        <a href="/accounts/register/" class="btn ">Join Now</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a target="_blank" href="https://www.templateshub.net">Templates Hub</a></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 footer-col-4">
+                    <div class="widget">
+                        <h5 class="footer-title">Sign Up For A Newsletter</h5>
+                        <p class="text-capitalize m-b20">Stay updated with weekly breaking news analysis and expert insights in education.</p>
+                        <div class="subscribe-form m-b20">
+                            <form class="subscription-form" action=" " method="post">
+                                <div class="ajax-message"></div>
+                                <div class="input-group">
+                                    <input name="email" required="required" class="form-control" placeholder="Your Email Address" type="email">
+                                    <span class="input-group-btn">
+                                        <button name="submit" value="Submit" type="submit" class="btn"><i class="fa fa-arrow-right"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 col-md-7 col-sm-12">
+                    <div class="row">
+                        <div class="col-4 col-lg-4 col-md-4 col-sm-4">
+                            <div class="widget footer_widget">
+                                <h5 class="footer-title">Company</h5>
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/about/">About</a></li>
+                                    <li><a href="/faq/">FAQs</a></li>
+                                    <li><a href="/contact/">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-4 col-md-4 col-sm-4">
+                            <div class="widget footer_widget">
+                                <h5 class="footer-title">Get In Touch</h5>
+                                <ul>
+                                        {% if user.is_authenticated %}
+										<li><a href="/dashboard/">Dashboard</a></li>
+										{% else %}
+                                        <li><a href="/accounts/login/">Login</a></li>
+                                        {% endif %}
+                                        <li><a href="/blog/">Blog</a></li>
+									</ul>
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-4 col-md-4 col-sm-4">
+                            <div class="widget footer_widget">
+                                <h5 class="footer-title">Courses</h5>
+                                <ul>
+                                    <li><a href="/courses/">Courses</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
+                    <div class="widget widget_gallery gallery-grid-4">
+                        <h5 class="footer-title">Our Partners</h5>
+                        <ul class="magnific-image">
+                            <li><a href="{% static 'assets/images/gallery/pic.jpg' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic.jpg' %}" alt=""></a></li>
+                            <li><a href="{% static 'assets/images/gallery/pic1.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic1.png' %}" alt=""></a></li>
+                            <li><a href="{% static 'assets/images/gallery/pic2.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic2.png' %}" alt=""></a></li>
+                            <li><a href="{% static 'assets/images/gallery/pic3.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic3.png' %}" alt=""></a></li>
+                            <li><a href="{% static 'assets/images/gallery/pic4.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic4.png' %}" alt=""></a></li>
+                            <li><a href="{% static 'assets/images/gallery/pic6.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic6.png' %}" alt=""></a></li>
+                            <li><a href="{% static 'assets/images/gallery/pic7.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic7.png' %}" alt=""></a></li>
+                            <li><a href="{% static 'assets/images/gallery/pic8.png' %}" class="magnific-anchor"><img src="{% static 'assets/images/gallery/pic8.png' %}" alt=""></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a href="#">SEN 201 (GROUP H)</a></div>
+            </div>
+        </div>
+    </div>
+</footer>
     <!-- Footer END ==== -->
     <button class="back-to-top fa fa-chevron-up" ></button>
 </div>
@@ -881,7 +543,117 @@
 <script src="{% static 'assets/vendors/owl-carousel/owl.carousel.js' %}"></script>
 <script src="{% static 'assets/js/functions.js' %}"></script>
 <script src="{% static 'assets/js/contact.js' %}"></script>
-<script src='{% static 'assets/vendors/switcher/switcher.js' %}'></script>
+<script src="{% static 'assets/vendors/switcher/switcher.js' %} "></script>
+
+
+<!-- added External JavaScripts assests -->
+<script src="{% static 'admin/assets/vendors/chart/chart.min.js' %}"></script>
+<script src="{% static 'admin/assets/js/admin.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/summernote/summernote.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/file-upload/imageuploadify.min.js' %}"></script>
+<script src="{% static 'admin/assets/vendors/switcher/switcher.js' %} "></script>
+<!-- include plugin -->
+<!-- Add this JavaScript at the bottom of the template -->
+<script>
+$(document).ready(function() {
+    $(document).ready(function() {
+    // Course form submission
+    $('#course-form').submit(function(e) {
+        e.preventDefault();
+
+        // Basic validation
+        let isValid = true;
+        $(this).find('[required]').each(function() {
+            if (!$(this).val()) {
+                alert(`Please fill in ${$(this).attr('placeholder')}`);
+                isValid = false;
+                return false;
+            }
+        });
+        if (!isValid) return;
+
+        const formData = new FormData(this);
+        const submitBtn = $(this).find('button[type="submit"]');
+
+        submitBtn.prop('disabled', true).text('Uploading...');
+
+        $.ajax({
+            url: "{% url 'create_course' %}",
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRFToken': $('input[name=csrfmiddlewaretoken]').val()
+            },
+            success: function(response) {
+                if (response.success) {
+                    alert('Course created successfully!');
+                    window.location.reload(); // Refresh the page
+                } else {
+                    alert('Error: ' + (response.error || 'Upload failed'));
+                }
+            },
+            error: function(xhr) {
+                alert('Error: ' + xhr.statusText);
+            },
+            complete: function() {
+                submitBtn.prop('disabled', false).text('Upload Course');
+            }
+        });
+    });
+
+    // Simple file size check
+    $('input[type="file"]').change(function() {
+        const file = this.files[0];
+        if (file && file.size > 2 * 1024 * 1024) {
+            alert('Image must be smaller than 2MB');
+            $(this).val('');
+        }
+    });
+});
+
+
+
+    $(document).ready(function() {
+      $('.summernote').summernote({
+        height: 300,
+        tabsize: 2
+      });
+
+	   $('input[type="file"]').imageuploadify();
+    });
+});
+
+    $(document).on('submit', '.delete-form', function(e) {
+    e.preventDefault();
+    if (confirm('Are you sure you want to delete this course?')) {
+        $.ajax({
+            url: $(this).attr('action'),
+            type: 'POST',
+            data: $(this).serialize(),
+            success: function() {
+                location.reload();
+            }
+        });
+    }
+});
+
+    // Profile picture upload styling
+document.getElementById('profilePicUpload').addEventListener('change', function(e) {
+    var fileName = e.target.files[0].name;
+    var nextSibling = e.target.nextElementSibling;
+    nextSibling.innerText = fileName;
+
+    // Simple client-side validation
+    if (this.files[0].size > 2 * 1024 * 1024) {
+        alert('File must be less than 2MB');
+        this.value = '';
+    }
+});
+</script>
+
+
 </body>
 
 </html>

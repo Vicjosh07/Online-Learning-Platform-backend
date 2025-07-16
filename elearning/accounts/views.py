@@ -1,78 +1,120 @@
 from django.contrib import messages
+from django.db import transaction
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .models import UserProfile
 
+from django.contrib.auth import authenticate, login
+from django.db import transaction
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from .models import UserProfile
+
+
 def user_register(request):
     if request.method == "POST":
-        # Extract form data
-        get_username = request.POST.get("username")
-        get_email = request.POST.get("email")
-        get_password = request.POST.get("password")
-        first_name = request.POST.get("first_name")
-        last_name = request.POST.get("last_name")
-        get_matric = request.POST.get("matric")
-        get_phonenumber = request.POST.get("phonenumber")
-        get_description = request.POST.get("description")
 
-        # Check if email is already registered
-        if User.objects.filter(email=get_email).exists():
-            messages.warning(request, "Email already exists. Please use a different email.")
+        form_data = {
+            'username': request.POST.get("username"),
+            'email': request.POST.get("email"),
+            'password': request.POST.get("password"),
+            'first_name': request.POST.get("first_name"),
+            'last_name': request.POST.get("last_name"),
+            'matric': request.POST.get("matric"),
+            'phonenumber': request.POST.get("phonenumber"),
+            'description': request.POST.get("description"),
+            'role': request.POST.get("role", "STUDENT")
+        }
+
+        # Validation checks
+        if User.objects.filter(email=form_data['email']).exists():
+            messages.error(request, "Email already exists")
+            return render(request, "accounts/register.html", {'form_data': form_data})
+
+        if User.objects.filter(username=form_data['username']).exists():
+            messages.error(request, "Username already taken")
+            return render(request, "accounts/register.html", {'form_data': form_data})
+
+        try:
+            with transaction.atomic():
+                # Create user (don't login yet)
+                user = User.objects.create_user(
+                    username=form_data['username'],
+                    email=form_data['email'],
+                    password=form_data['password'],
+                    first_name=form_data['first_name'],
+                    last_name=form_data['last_name']
+                )
+
+                # Create profile
+                UserProfile.objects.create(
+                    user=user,
+                    matric=form_data['matric'],
+                    phonenumber=form_data['phonenumber'],
+                    description=form_data['description'],
+                    role=form_data['role']
+                )
+
+                # Authenticate and login in a separate step
+                authenticated_user = authenticate(
+                    request,
+                    username=form_data['username'],
+                    password=form_data['password']
+                )
+
+                if authenticated_user is not None:
+                    login(request, authenticated_user)
+                    messages.success(request, "Registration successful!")
+
+                    # Role-based redirect
+                    if form_data['role'] == 'LECTURER':
+                        return redirect('upload_course')
+                    return redirect('dashb')
+                else:
+                    messages.error(request, "Authentication failed after registration")
+                    return redirect('user_register')
+
+        except Exception as e:
+            messages.error(request, f"Registration failed: {str(e)}")
             return redirect('user_register')
 
-        # Check if username is already taken
-        if User.objects.filter(username=get_username).exists():
-            messages.warning(request, "Username already taken. Please choose a different username.")
-            return redirect('user_register')
-
-        # Create user
-        myuser = User.objects.create_user(username=get_username,
-                                          email=get_email,
-                                          password=get_password,
-                                          first_name=first_name,
-                                          last_name=last_name
-                                          )
-        myuser.save()
-
-        # Create or get UserProfile instance
-        UserProfile.objects.get_or_create(
-            user=myuser,
-            defaults={
-                'matric': get_matric,
-                'phonenumber': get_phonenumber,
-                'description': get_description,
-                'first_name': first_name,
-                'last_name' : last_name,
-            }
-        )
-
-        # Authenticate and log in user
-        user = authenticate(request, username=get_username, password=get_password)
-        if user is not None:
-            login(request, user)
-            messages.success(request, "You have successfully registered and logged in!")
-            return redirect('dashb')  # Redirect to dashboard
-
-    return render(request, "accounts/register.html")
+    # GET request
+    return render(request, "accounts/register.html", {
+        'role_choices': [
+            ('STUDENT', 'Student'),
+            ('VISITOR', 'Visitor'),
+            ('LECTURER', 'Lecturer')
+        ]
+    })
 
 def user_login(request):
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
 
-        # Find the user by email
         try:
             user = User.objects.get(email=email)
-            user = authenticate(request, username=user.username, password=password)
+            user = authenticate(username=user.username, password=password)
+
             if user is not None:
                 login(request, user)
-                messages.success(request, "You have successfully logged in!")
-                return redirect('dashb')  # Redirect to dashboard
-            else:
-                messages.error(request, "Invalid credentials. Please try again.")
+                profile = user.userprofile  # This will raise exception if profile doesn't exist
+
+
+
+                # Role-based redirect
+                if profile.role == 'LECTURER':
+                    return redirect('upload_course')
+                return redirect('dashb')  # For visitors
+
+            messages.error(request, "Invalid credentials")
         except User.DoesNotExist:
-            messages.error(request, "User does not exist. Please register first.")
+            messages.error(request, "User not found")
+        except UserProfile.DoesNotExist:
+            messages.error(request, "User profile missing - please contact admin")
+            return redirect('index')
 
     return render(request, "accounts/login.html")
 

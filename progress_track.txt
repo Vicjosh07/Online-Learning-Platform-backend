@@ -1,0 +1,36 @@
+How to start the django project..
+-> open a terminal windows and navigate to the project's root directory - new folder
+-> kickstart using django's administrative module manage.py, e.g;
+C:\Users\HP py manage.py runserver
+click the localhost server now running i.e http://127.0.0.1:8000 or localhost:8000
+-> you will now be routed to the index page of the project
+
+
+To implement the role based user interaction, i need to be working on new page templates for the lecturers
+
+1. I'm going to be need a template for the user to write a full scale profile that will be displayed per course in the course details page( and also in the instructors profile page..probably implement instructors page later)
+
+2. A page for instructors to upload material..handbooks, youtube vids, i'll automtamically handles how they will be displayed and updated to courses
+
+3. Include links that sends user to that gives a collapsable brief overview of that topic within the whole material(handout in this case)
+
+Please i need this in like 3 days we are doing presentation again this week😥..system architecture plus project progress..please bro
+
+
+
+
+After i being assessed by my lecturer and reviewed here's the next steps of the overall project with the system architecture, her review and my  outline to acheive...
+
+HER REVIEW: 
+"That the whole project's problem is based on the architecture we picked.. 
+That the robust architecture should be sub divided to the different model level and represent led to get a overview of the entire structure before implementing it.. 
+
+- User interaction/general system architecture I should use  " Use case model " 
+Where 
+Arrow connector from student/admin to register
+Lecturer for actions to upload material, create and grade test with question and time, q/a.. Each session for every lecturer.. 
+In general interaction modules/nodes between the different roles.. 
+
+- content delivery on learning - data model
+How the content will be relayed to the student
+Once they open a course.. They will have the clickable topics.."
